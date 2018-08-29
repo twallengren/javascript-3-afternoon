@@ -22,7 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
+var {color: color, make: make, model: model, year: year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -35,6 +35,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
+  var {firstName: firstName, lastName: lastName, title: title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -54,7 +55,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation (obj) {
+  var {utah: utah, california: california, texas: texas, arizona: arizona} = obj;
+  return utah + california + texas + arizona
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +72,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients (obj) {
+  var {carb: carb, fat: fat, protein: protein} = obj;
+  return [carb, fat, protein]
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +93,20 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers (obj) {
+  var {first: first, second: second, third: third} = obj;
+  arr = [first, second, third];
+  min = null;
+  arr.forEach((elem) => {
+    if (min === null) {
+      min = elem;
+    } 
+    if (min > elem) {
+      min = elem;
+    }
+  })
+  return min
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +118,26 @@ function greeting( obj ) {
 */
 
 //Code Here
+function numberGroups(obj) {
+  var {a: a, b: b, c: c} = obj;
+  arr = [a, b, c];
+  newarr = arr.map((elem) => {
+    return elem.length
+  })
+  max = null;
+  mv = null
+  ind = 0;
+  newarr.forEach((elem) => {
+    if (max === null) {
+      max = ind;
+    } 
+    if (mv < elem) {
+      max = ind;
+      mv = elem;
+    }
+    ind += 1
+  })
+  return arr[max]
+}
 
 
